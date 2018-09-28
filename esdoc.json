@@ -1,0 +1,6 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "includes": ["\\.(js|es6|jsx)$"],
+  "excludes": ["\\.config\\.(js|es6|jsx)$"]
+}

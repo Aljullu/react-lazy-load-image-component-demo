@@ -1,0 +1,9 @@
+.effect-selector-option {
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.effect-selector-option > input {
+  margin: 0 .25em 0 0;
+  vertical-align: middle;
+}

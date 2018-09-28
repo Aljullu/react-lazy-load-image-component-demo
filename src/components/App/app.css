@@ -1,0 +1,54 @@
+html,
+body {
+  background: #ededed;
+  color: #111;
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0374b4;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0 0 .5em;
+}
+
+.app-controls {
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 5px #ddd;
+  margin: 1em auto;
+  max-width: 1034px;
+  padding: 1em 1.5em 1em;
+}
+
+.app-controls-github {
+  float: right;
+}
+
+.app-controls-fieldset {
+  border: 1px dotted #ddd;
+  box-shadow: 0 1px 3px #eee;
+  padding: 0 1.5em;
+}
+
+.app-controls-number {
+  max-width: 4em;
+  margin-right: .25em;
+  text-align: right;
+}
+
+.app-scroll {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+}

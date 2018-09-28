@@ -1,0 +1,19 @@
+.gallery {
+  margin: 0 auto;
+  max-width: 1034px;
+}
+
+.gallery-img,
+.gallery-img-wrapper {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.gallery-img:nth-child(2n),
+.gallery-img-wrapper:nth-child(2n) {
+  margin-left: 10px;
+}
+
+.gallery-img-wrapper > .gallery-img {
+  margin: 0;
+}
