@@ -20,12 +20,12 @@ export class Gallery extends React.Component {
   }
 
   render() {
-    const {afterLoadText, beforeLoadText, effect,
+    const {afterLoadText, beforeLoadText, effect, direction,
       scrollPosition, showLowResImages, threshold} = this.props;
     const photos = getPhotos();
 
     return (
-      <div className="gallery">
+      <div className={ 'gallery ' + direction }>
         {photos.map((photo) =>
           <LazyLoadImage
             alt={photo.src}
@@ -50,6 +50,8 @@ export class Gallery extends React.Component {
 Gallery.propTypes = {
   afterLoadText: PropTypes.string.isRequired,
   beforeLoadText: PropTypes.string.isRequired,
+  direction: PropTypes.oneOf([
+    'horizontal', 'vertical']).isRequired,
   effect: PropTypes.oneOf([
     'black-and-white', 'blur', 'opacity', '']).isRequired,
   showLowResImages: PropTypes.bool.isRequired,

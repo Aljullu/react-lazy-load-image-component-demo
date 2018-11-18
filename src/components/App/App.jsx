@@ -15,6 +15,7 @@ export default class App extends React.Component {
     this.state = {
       afterLoadText: 'afterLoad triggered',
       beforeLoadText: 'beforeLoad triggered',
+      direction: 'vertical',
       effect: '',
       showLowResImages: true,
       threshold: 100
@@ -46,11 +47,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    const {afterLoadText, beforeLoadText,
+    const {afterLoadText, beforeLoadText, direction,
       effect, showLowResImages, threshold} = this.state;
 
     return (
-      <div>
+      <div className={'app ' + direction}>
         <form className="app-controls">
           <a href="https://github.com/Aljullu/react-lazy-load-image-component">
             <img
@@ -68,18 +69,6 @@ export default class App extends React.Component {
                 effect={effect}
                 onChange={this.onChangeEffect()} />
             </p>
-          </fieldset>
-          <br />
-          <fieldset className="app-controls-fieldset">
-            <p>
-              <label>
-                <input className="app-controls-number"
-                  type="number"
-                  onChange={this.onChangeNumber('threshold')}
-                  value={threshold} />
-                threshold <small>(px)</small>
-              </label>
-            </p>
             <p>
               <label>
                 <input className="app-controls-checkbox"
@@ -91,6 +80,37 @@ export default class App extends React.Component {
                   }}
                   defaultChecked={showLowResImages} />
                 Show low resolution images while loading
+              </label>
+            </p>
+          </fieldset>
+          <br />
+          <fieldset className="app-controls-fieldset">
+            <p>
+              Direction:<br/>
+              <label>
+                <input type="radio"
+                  checked={direction === 'vertical'}
+                  name="direction"
+                  onChange={this.onChangeText('direction')}
+                  value="vertical" />
+                Vertical
+              </label>
+              <label>
+                <input type="radio"
+                  checked={direction === 'horizontal'}
+                  name="direction"
+                  onChange={this.onChangeText('direction')}
+                  value="horizontal" />
+                Horizontal
+              </label>
+            </p>
+            <p>
+              <label>
+                <input className="app-controls-number"
+                  type="number"
+                  onChange={this.onChangeNumber('threshold')}
+                  value={threshold} />
+                threshold <small>(px)</small>
               </label>
             </p>
           </fieldset>
@@ -122,6 +142,7 @@ export default class App extends React.Component {
         <Gallery
           afterLoadText={afterLoadText}
           beforeLoadText={beforeLoadText}
+          direction={direction}
           effect={effect}
           showLowResImages={showLowResImages}
           threshold={threshold} />

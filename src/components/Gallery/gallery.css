@@ -3,17 +3,20 @@
   max-width: 1034px;
 }
 
-.gallery-img,
-.gallery-img-wrapper {
+.gallery.horizontal {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.gallery.horizontal .gallery-img-wrapper {
+  margin-left: 10px;
+}
+
+.gallery:not(.horizontal) .gallery-img-wrapper {
   float: left;
   margin-bottom: 10px;
 }
 
-.gallery-img:nth-child(2n),
-.gallery-img-wrapper:nth-child(2n) {
+.gallery:not(.horizontal) .gallery-img-wrapper:nth-child(2n) {
   margin-left: 10px;
-}
-
-.gallery-img-wrapper > .gallery-img {
-  margin: 0;
 }
