@@ -21,11 +21,12 @@ export class Gallery extends React.Component {
 
   render() {
     const {afterLoadText, beforeLoadText, effect, direction,
-      scrollPosition, showLowResImages, threshold} = this.props;
+      scrollPosition, showLowResImages, threshold, containerWithOverflow
+    } = this.props;
     const photos = getPhotos();
 
     return (
-      <div className={ 'gallery ' + direction }>
+      <div className={ `gallery ${direction} ${containerWithOverflow ? 'with-overflow' : ''}` }>
         {photos.map((photo) =>
           <LazyLoadImage
             alt={photo.src}
@@ -47,6 +48,10 @@ export class Gallery extends React.Component {
   }
 }
 
+Gallery.defaultProps = {
+  containerWithOverflow: false
+};
+
 Gallery.propTypes = {
   afterLoadText: PropTypes.string.isRequired,
   beforeLoadText: PropTypes.string.isRequired,
@@ -55,7 +60,8 @@ Gallery.propTypes = {
   effect: PropTypes.oneOf([
     'black-and-white', 'blur', 'opacity', '']).isRequired,
   showLowResImages: PropTypes.bool.isRequired,
-  threshold: PropTypes.number.isRequired
+  threshold: PropTypes.number.isRequired,
+  containerWithOverflow: PropTypes.bool
 };
 
 export default trackWindowScroll(Gallery);
