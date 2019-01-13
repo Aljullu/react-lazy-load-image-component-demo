@@ -8,13 +8,13 @@
   white-space: nowrap;
 }
 
-.with-overflow {
+.gallery.with-overflow {
   max-height: 500px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
-.horizontal.with-overflow {
+.gallery.horizontal.with-overflow {
   max-height: none;
   max-width: 990px;
   overflow-x: scroll;
