@@ -115,6 +115,7 @@ export default class App extends React.Component {
               </label>
             </p>
           </fieldset>
+          <br />
           <fieldset className="app-controls-fieldset">
             <p>
               <label>
