@@ -153,7 +153,7 @@ export default class App extends React.Component {
               </label>
             </p>
           </fieldset>
-          <p className="app-scroll">Scrolll down to see it in action!</p>
+          <p className="app-scroll">Scroll down to see it in action!</p>
         </form>
         <Gallery
           afterLoadText={afterLoadText}
