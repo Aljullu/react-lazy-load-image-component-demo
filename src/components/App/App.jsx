@@ -16,6 +16,7 @@ export default class App extends React.Component {
       afterLoadText: 'afterLoad triggered',
       beforeLoadText: 'beforeLoad triggered',
       direction: 'vertical',
+      containerWithOverflow: false,
       effect: '',
       showLowResImages: true,
       threshold: 100
@@ -48,7 +49,7 @@ export default class App extends React.Component {
 
   render() {
     const {afterLoadText, beforeLoadText, direction,
-      effect, showLowResImages, threshold} = this.state;
+      effect, showLowResImages, threshold, containerWithOverflow} = this.state;
 
     return (
       <div className={'app ' + direction}>
@@ -114,6 +115,21 @@ export default class App extends React.Component {
               </label>
             </p>
           </fieldset>
+          <fieldset className="app-controls-fieldset">
+            <p>
+              <label>
+                <input className="app-controls-checkbox"
+                  type="checkbox"
+                  onChange={() => {
+                    this.setState({
+                      containerWithOverflow: !this.state.containerWithOverflow
+                    });
+                  }}
+                  defaultChecked={this.state.containerWithOverflow} />
+                Container with overflow
+              </label>
+            </p>
+          </fieldset>
           <br />
           <fieldset className="app-controls-fieldset">
             <p>
@@ -142,6 +158,7 @@ export default class App extends React.Component {
         <Gallery
           afterLoadText={afterLoadText}
           beforeLoadText={beforeLoadText}
+          containerWithOverflow={containerWithOverflow}
           direction={direction}
           effect={effect}
           showLowResImages={showLowResImages}
