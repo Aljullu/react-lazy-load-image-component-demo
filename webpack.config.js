@@ -21,22 +21,28 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.jsx?$/,
-        loader: 'eslint-loader',
+        use: {
+          loader: 'eslint-loader'
+        },
         include: /src/
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader'
+        },
         exclude: /node_modules/
       },
       {
         test: /\.jsx$/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader'
+        },
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader'],
         exclude: /node_modules/
       }
     ]
