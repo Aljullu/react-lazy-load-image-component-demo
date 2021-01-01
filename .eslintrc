@@ -11,7 +11,7 @@
     "react"
   ],
   "rules": {
-    # Posible errors
+    # Possible errors
     "no-extra-parens": 0,
     "valid-jsdoc": [1, { "requireReturn": false }],
     # Best practices
