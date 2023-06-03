@@ -13,7 +13,7 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      afterLoadText: 'afterLoad triggered',
+      onLoadText: 'onLoad triggered',
       beforeLoadText: 'beforeLoad triggered',
       direction: 'vertical',
       containerWithOverflow: false,
@@ -48,7 +48,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const {afterLoadText, beforeLoadText, direction,
+    const {onLoadText, beforeLoadText, direction,
       effect, showLowResImages, threshold, containerWithOverflow} = this.state;
 
     return (
@@ -149,15 +149,15 @@ export default class App extends React.Component {
               <label>
                 <input className="app-controls-text"
                   type="text"
-                  onChange={this.onChangeText('afterLoadText')}
-                  value={afterLoadText} />
+                  onChange={this.onChangeText('onLoadText')}
+                  value={onLoadText} />
               </label>
             </p>
           </fieldset>
           <p className="app-scroll">Scroll down to see it in action!</p>
         </form>
         <Gallery
-          afterLoadText={afterLoadText}
+          onLoadText={onLoadText}
           beforeLoadText={beforeLoadText}
           containerWithOverflow={containerWithOverflow}
           direction={direction}
